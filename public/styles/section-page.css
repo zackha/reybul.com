@@ -1,0 +1,263 @@
+/* First parameter define amount of columns (default: 1)
+ * Second parameter define how many columns each item should span (default: 1)
+ * Third parameter defines if the column is fluid or not
+ */
+@-webkit-keyframes arrow-bounce {
+  0%,
+  50%,
+  100%,
+  to {
+    -webkit-transform: translateY(0) translateZ(0);
+            transform: translateY(0) translateZ(0);
+  }
+  75% {
+    -webkit-transform: translateY(0.375rem) translateZ(0);
+            transform: translateY(0.375rem) translateZ(0);
+  }
+}
+@keyframes arrow-bounce {
+  0%,
+  50%,
+  100%,
+  to {
+    -webkit-transform: translateY(0) translateZ(0);
+            transform: translateY(0) translateZ(0);
+  }
+  75% {
+    -webkit-transform: translateY(0.375rem) translateZ(0);
+            transform: translateY(0.375rem) translateZ(0);
+  }
+}
+
+@-webkit-keyframes arrow-bounce-to-right {
+  0%,
+  50%,
+  100%,
+  to {
+    -webkit-transform: translateX(0) translateZ(0);
+            transform: translateX(0) translateZ(0);
+  }
+  75% {
+    -webkit-transform: translateX(0.375rem) translateZ(0);
+            transform: translateX(0.375rem) translateZ(0);
+  }
+}
+
+@keyframes arrow-bounce-to-right {
+  0%,
+  50%,
+  100%,
+  to {
+    -webkit-transform: translateX(0) translateZ(0);
+            transform: translateX(0) translateZ(0);
+  }
+  75% {
+    -webkit-transform: translateX(0.375rem) translateZ(0);
+            transform: translateX(0.375rem) translateZ(0);
+  }
+}
+
+@-webkit-keyframes lb-zoom-leave {
+  to {
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+}
+
+@keyframes lb-zoom-leave {
+  to {
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+}
+
+@-webkit-keyframes lb-zoom-enter {
+  from {
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+}
+
+@keyframes lb-zoom-enter {
+  from {
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+}
+
+@keyframes arrow-bounce {
+  0%,
+  50%,
+  100%,
+  to {
+    -webkit-transform: translateY(0) translateZ(0);
+            transform: translateY(0) translateZ(0);
+  }
+  75% {
+    -webkit-transform: translateY(0.375rem) translateZ(0);
+            transform: translateY(0.375rem) translateZ(0);
+  }
+}
+
+@keyframes arrow-bounce-to-right {
+  0%,
+  50%,
+  100%,
+  to {
+    -webkit-transform: translateX(0) translateZ(0);
+            transform: translateX(0) translateZ(0);
+  }
+  75% {
+    -webkit-transform: translateX(0.375rem) translateZ(0);
+            transform: translateX(0.375rem) translateZ(0);
+  }
+}
+
+.section-content__nav-label {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0;
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.section-page-header {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section-page-header > .component-content {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+}
+
+.section-page-header__description p {
+  font-size: 1.125rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  max-width: 80ch;
+}
+
+.subsection-header__text-region {
+  position: relative;
+  background-color: #fff;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+}
+
+.subsection-header__text-region > *:last-child {
+  margin-bottom: 0;
+}
+
+.subsection-header__image-wrapper {
+  position: relative;
+  display: block;
+}
+
+.subsection-header__picture {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.subsection-header__image-wrapper .ls-blur-up-img,
+.subsection-header__image-wrapper .js-object-fit-clone,
+.subsection-header__image {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: auto;
+  min-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  font-family: 'object-fit: cover';
+}
+
+.subsection-header--with-image .subsection-header__image-wrapper {
+  height: 11rem;
+}
+
+.subsection-header--with-big-image .subsection-header__image-wrapper {
+  height: 19rem;
+}
+
+.subsection-header--with-image .subsection-header__text-region,
+.subsection-header--with-big-image .subsection-header__text-region {
+  padding-top: 1rem;
+}
+
+@media screen and (min-width: 36em) {
+  .section-page-header > .component-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .section-page-header > .component-content {
+    margin-top: 4rem;
+  }
+  .subsection-header--with-image .subsection-header__text-region,
+  .subsection-header--with-big-image .subsection-header__text-region {
+    padding-top: 2rem;
+  }
+}
+
+@media screen and (min-width: 36em) and (orientation: portrait) {
+  .subsection-header--with-image .subsection-header__image-wrapper {
+    height: 20rem;
+  }
+  .subsection-header--with-big-image .subsection-header__image-wrapper {
+    height: 22.5rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .subsection-header--with-image .subsection-header__image-wrapper {
+    height: 20rem;
+  }
+  .subsection-header--with-big-image .subsection-header__image-wrapper {
+    height: 22.5rem;
+  }
+}
+
+@media screen and (min-width: 62em) {
+  .section-page-header > .component-content {
+    max-width: 68rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .subsection-header__text-region {
+    padding-top: 4rem;
+  }
+  .subsection-header__image-wrapper {
+    margin-bottom: -3rem;
+  }
+  .subsection-header--with-big-image .subsection-header__image-wrapper {
+    height: 30rem;
+  }
+  .subsection-header--with-image .subsection-header__text-region,
+  .subsection-header--with-big-image .subsection-header__text-region {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .subsection-header--with-image .subsection-header__text-region,
+  .subsection-header--with-big-image .subsection-header__text-region {
+    padding-top: 3.5rem;
+  }
+}
+
+/*# sourceMappingURL=section-page.css.map */

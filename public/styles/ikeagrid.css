@@ -1,0 +1,2316 @@
+/*
+  GUIDELINES
+  [name - ratio]
+  square - 1:1
+  landscape-75 - 4:3
+  landscape-80 - 5:4
+  landscape-62-5 - 8:5
+  portrait-125 - 4:5
+*/
+/* First parameter define amount of columns (default: 1)
+ * Second parameter define how many columns each item should span (default: 1)
+ * Third parameter defines if the column is fluid or not
+ */
+@-webkit-keyframes arrow-bounce {
+  0%,
+  50%,
+  100%,
+  to {
+    -webkit-transform: translateY(0) translateZ(0);
+            transform: translateY(0) translateZ(0);
+  }
+  75% {
+    -webkit-transform: translateY(0.375rem) translateZ(0);
+            transform: translateY(0.375rem) translateZ(0);
+  }
+}
+@keyframes arrow-bounce {
+  0%,
+  50%,
+  100%,
+  to {
+    -webkit-transform: translateY(0) translateZ(0);
+            transform: translateY(0) translateZ(0);
+  }
+  75% {
+    -webkit-transform: translateY(0.375rem) translateZ(0);
+            transform: translateY(0.375rem) translateZ(0);
+  }
+}
+
+@-webkit-keyframes arrow-bounce-to-right {
+  0%,
+  50%,
+  100%,
+  to {
+    -webkit-transform: translateX(0) translateZ(0);
+            transform: translateX(0) translateZ(0);
+  }
+  75% {
+    -webkit-transform: translateX(0.375rem) translateZ(0);
+            transform: translateX(0.375rem) translateZ(0);
+  }
+}
+
+@keyframes arrow-bounce-to-right {
+  0%,
+  50%,
+  100%,
+  to {
+    -webkit-transform: translateX(0) translateZ(0);
+            transform: translateX(0) translateZ(0);
+  }
+  75% {
+    -webkit-transform: translateX(0.375rem) translateZ(0);
+            transform: translateX(0.375rem) translateZ(0);
+  }
+}
+
+/**
+  * IKEA's Grid implementation. Modification of the job's portal grid.
+  */
+.ikea-container {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: 90rem;
+}
+
+.ikea-sitecore-row {
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.ikea-sitecore-row > .component-content {
+  width: 100%;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 0 0.5rem;
+}
+
+.ikea-sitecore-row--nested {
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 0;
+  width: auto;
+}
+
+.ikea-sitecore-row--start > .component-content {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.ikea-sitecore-row--end > .component-content {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.ikea-sitecore-row--center > .component-content {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ikea-sitecore-row--between > .component-content {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ikea-sitecore-row--around > .component-content {
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+.ikea-row {
+  width: 100%;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 0 0.5rem;
+}
+
+.ikea-row--nested {
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 0;
+  width: auto;
+}
+
+.ikea-row--start {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.ikea-row--end {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.ikea-row--center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ikea-row--between {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ikea-row--around {
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+/**
+  * Create a row distribution class for each breakpoint
+  */
+.ikea-row--xs-start,
+.ikea-sitecore-row--xs-start > .component-content {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.ikea-row--xs-end,
+.ikea-sitecore-row--xs-end > .component-content {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.ikea-row--xs-center,
+.ikea-sitecore-row--xs-center > .component-content {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ikea-row--xs-between,
+.ikea-sitecore-row--xs-between > .component-content {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ikea-row--xs-around,
+.ikea-sitecore-row--xs-around > .component-content {
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+.ikea-col,
+[class*='ikea-col-'] {
+  display: inline-block;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-flex-basis: 0;
+      -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+  min-width: 8.33%;
+  padding: 0 0.5rem;
+}
+
+.ikea-sitecore-row .ikea-col:not(.ikea-paddingless-col) .ikea-row,
+.ikea-sitecore-row .ikea-col:not(.ikea-paddingless-col) .ikea-sitecore-row > .component-content,
+.ikea-row .ikea-col:not(.ikea-paddingless-col) .ikea-row,
+.ikea-row .ikea-col:not(.ikea-paddingless-col) .ikea-sitecore-row > .component-content,
+[class*='ikea-col']:not(.ikea-paddingless-col) .ikea-row,
+[class*='ikea-col']:not(.ikea-paddingless-col) .ikea-sitecore-row > .component-content {
+  width: auto;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 0;
+  width: auto;
+}
+
+.ikea-col-1 {
+  -webkit-flex-basis: 8.33333%;
+      -ms-flex-preferred-size: 8.33333%;
+          flex-basis: 8.33333%;
+  max-width: 8.33333%;
+}
+
+.ikea-col-2 {
+  -webkit-flex-basis: 16.66667%;
+      -ms-flex-preferred-size: 16.66667%;
+          flex-basis: 16.66667%;
+  max-width: 16.66667%;
+}
+
+.ikea-col-3 {
+  -webkit-flex-basis: 25%;
+      -ms-flex-preferred-size: 25%;
+          flex-basis: 25%;
+  max-width: 25%;
+}
+
+.ikea-col-4 {
+  -webkit-flex-basis: 33.33333%;
+      -ms-flex-preferred-size: 33.33333%;
+          flex-basis: 33.33333%;
+  max-width: 33.33333%;
+}
+
+.ikea-col-5 {
+  -webkit-flex-basis: 41.66667%;
+      -ms-flex-preferred-size: 41.66667%;
+          flex-basis: 41.66667%;
+  max-width: 41.66667%;
+}
+
+.ikea-col-6 {
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+  max-width: 50%;
+}
+
+.ikea-col-7 {
+  -webkit-flex-basis: 58.33333%;
+      -ms-flex-preferred-size: 58.33333%;
+          flex-basis: 58.33333%;
+  max-width: 58.33333%;
+}
+
+.ikea-col-8 {
+  -webkit-flex-basis: 66.66667%;
+      -ms-flex-preferred-size: 66.66667%;
+          flex-basis: 66.66667%;
+  max-width: 66.66667%;
+}
+
+.ikea-col-9 {
+  -webkit-flex-basis: 75%;
+      -ms-flex-preferred-size: 75%;
+          flex-basis: 75%;
+  max-width: 75%;
+}
+
+.ikea-col-10 {
+  -webkit-flex-basis: 83.33333%;
+      -ms-flex-preferred-size: 83.33333%;
+          flex-basis: 83.33333%;
+  max-width: 83.33333%;
+}
+
+.ikea-col-11 {
+  -webkit-flex-basis: 91.66667%;
+      -ms-flex-preferred-size: 91.66667%;
+          flex-basis: 91.66667%;
+  max-width: 91.66667%;
+}
+
+.ikea-col-12 {
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+  max-width: 100%;
+}
+
+.ikea-break {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-box-flex: initial;
+  -webkit-flex-grow: initial;
+      -ms-flex-positive: initial;
+          flex-grow: initial;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+  max-width: 100%;
+  padding: 0 0.5rem;
+}
+
+.ikea-break--line {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-box-flex: initial;
+  -webkit-flex-grow: initial;
+      -ms-flex-positive: initial;
+          flex-grow: initial;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+  max-width: 100%;
+  padding: 0 0.5rem;
+  border-top: 0.0625rem solid #ccc;
+}
+
+.ikea-offset-1 {
+  margin-left: 8.33333%;
+}
+
+.ikea-offset-1-both-sides {
+  margin-left: 8.33333%;
+  margin-right: 8.33333%;
+}
+
+.ikea-offset-2 {
+  margin-left: 16.66667%;
+}
+
+.ikea-offset-2-both-sides {
+  margin-left: 16.66667%;
+  margin-right: 16.66667%;
+}
+
+.ikea-offset-3 {
+  margin-left: 25%;
+}
+
+.ikea-offset-3-both-sides {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.ikea-offset-4 {
+  margin-left: 33.33333%;
+}
+
+.ikea-offset-4-both-sides {
+  margin-left: 33.33333%;
+  margin-right: 33.33333%;
+}
+
+.ikea-offset-5 {
+  margin-left: 41.66667%;
+}
+
+.ikea-offset-5-both-sides {
+  margin-left: 41.66667%;
+  margin-right: 41.66667%;
+}
+
+.ikea-offset-6 {
+  margin-left: 50%;
+}
+
+.ikea-offset-6-both-sides {
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
+.ikea-offset-7 {
+  margin-left: 58.33333%;
+}
+
+.ikea-offset-7-both-sides {
+  margin-left: 58.33333%;
+  margin-right: 58.33333%;
+}
+
+.ikea-offset-8 {
+  margin-left: 66.66667%;
+}
+
+.ikea-offset-8-both-sides {
+  margin-left: 66.66667%;
+  margin-right: 66.66667%;
+}
+
+.ikea-offset-9 {
+  margin-left: 75%;
+}
+
+.ikea-offset-9-both-sides {
+  margin-left: 75%;
+  margin-right: 75%;
+}
+
+.ikea-offset-10 {
+  margin-left: 83.33333%;
+}
+
+.ikea-offset-10-both-sides {
+  margin-left: 83.33333%;
+  margin-right: 83.33333%;
+}
+
+.ikea-offset-11 {
+  margin-left: 91.66667%;
+}
+
+.ikea-offset-11-both-sides {
+  margin-left: 91.66667%;
+  margin-right: 91.66667%;
+}
+
+.ikea-offset-12 {
+  margin-left: 100%;
+}
+
+.ikea-offset-12-both-sides {
+  margin-left: 100%;
+  margin-right: 100%;
+}
+
+[dir='rtl'] .ikea-offset-1 {
+  margin-right: 8.33333%;
+  margin-left: auto;
+}
+
+[dir='rtl'] .ikea-offset-2 {
+  margin-right: 16.66667%;
+  margin-left: auto;
+}
+
+[dir='rtl'] .ikea-offset-3 {
+  margin-right: 25%;
+  margin-left: auto;
+}
+
+[dir='rtl'] .ikea-offset-4 {
+  margin-right: 33.33333%;
+  margin-left: auto;
+}
+
+[dir='rtl'] .ikea-offset-5 {
+  margin-right: 41.66667%;
+  margin-left: auto;
+}
+
+[dir='rtl'] .ikea-offset-6 {
+  margin-right: 50%;
+  margin-left: auto;
+}
+
+[dir='rtl'] .ikea-offset-7 {
+  margin-right: 58.33333%;
+  margin-left: auto;
+}
+
+[dir='rtl'] .ikea-offset-8 {
+  margin-right: 66.66667%;
+  margin-left: auto;
+}
+
+[dir='rtl'] .ikea-offset-9 {
+  margin-right: 75%;
+  margin-left: auto;
+}
+
+[dir='rtl'] .ikea-offset-10 {
+  margin-right: 83.33333%;
+  margin-left: auto;
+}
+
+[dir='rtl'] .ikea-offset-11 {
+  margin-right: 91.66667%;
+  margin-left: auto;
+}
+
+[dir='rtl'] .ikea-offset-12 {
+  margin-right: 100%;
+  margin-left: auto;
+}
+
+.ikea-col.ikea-paddingless-col,
+[class*='ikea-col'].ikea-paddingless-col {
+  padding: 0;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+/**
+  * Create a hidden class for each breakpoint
+  */
+.hidden-xs {
+  display: none !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.page-wrapper,
+#wrapper {
+  min-height: 100%;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.page-wrapper > main,
+#wrapper > main {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  min-height: 3.5625rem;
+}
+
+.page-wrapper > footer,
+#wrapper > footer {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+
+@media screen and (min-width: 20em) {
+  .ikea-sitecore-row--nested {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+  .ikea-row--nested {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+  .ikea-row--sm-start,
+  .ikea-sitecore-row--sm-start > .component-content {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .ikea-row--sm-end,
+  .ikea-sitecore-row--sm-end > .component-content {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .ikea-row--sm-center,
+  .ikea-sitecore-row--sm-center > .component-content {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ikea-row--sm-between,
+  .ikea-sitecore-row--sm-between > .component-content {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .ikea-row--sm-around,
+  .ikea-sitecore-row--sm-around > .component-content {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+  }
+  .ikea-sitecore-row .ikea-col:not(.ikea-paddingless-col) .ikea-row,
+  .ikea-sitecore-row .ikea-col:not(.ikea-paddingless-col) .ikea-sitecore-row > .component-content,
+  .ikea-row .ikea-col:not(.ikea-paddingless-col) .ikea-row,
+  .ikea-row .ikea-col:not(.ikea-paddingless-col) .ikea-sitecore-row > .component-content,
+  [class*='ikea-col']:not(.ikea-paddingless-col) .ikea-row,
+  [class*='ikea-col']:not(.ikea-paddingless-col) .ikea-sitecore-row > .component-content {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+  .ikea-col-sm-1 {
+    -webkit-flex-basis: 8.33333%;
+        -ms-flex-preferred-size: 8.33333%;
+            flex-basis: 8.33333%;
+    max-width: 8.33333%;
+  }
+  .ikea-col-sm-2 {
+    -webkit-flex-basis: 16.66667%;
+        -ms-flex-preferred-size: 16.66667%;
+            flex-basis: 16.66667%;
+    max-width: 16.66667%;
+  }
+  .ikea-col-sm-3 {
+    -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
+    max-width: 25%;
+  }
+  .ikea-col-sm-4 {
+    -webkit-flex-basis: 33.33333%;
+        -ms-flex-preferred-size: 33.33333%;
+            flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+  .ikea-col-sm-5 {
+    -webkit-flex-basis: 41.66667%;
+        -ms-flex-preferred-size: 41.66667%;
+            flex-basis: 41.66667%;
+    max-width: 41.66667%;
+  }
+  .ikea-col-sm-6 {
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+    max-width: 50%;
+  }
+  .ikea-col-sm-7 {
+    -webkit-flex-basis: 58.33333%;
+        -ms-flex-preferred-size: 58.33333%;
+            flex-basis: 58.33333%;
+    max-width: 58.33333%;
+  }
+  .ikea-col-sm-8 {
+    -webkit-flex-basis: 66.66667%;
+        -ms-flex-preferred-size: 66.66667%;
+            flex-basis: 66.66667%;
+    max-width: 66.66667%;
+  }
+  .ikea-col-sm-9 {
+    -webkit-flex-basis: 75%;
+        -ms-flex-preferred-size: 75%;
+            flex-basis: 75%;
+    max-width: 75%;
+  }
+  .ikea-col-sm-10 {
+    -webkit-flex-basis: 83.33333%;
+        -ms-flex-preferred-size: 83.33333%;
+            flex-basis: 83.33333%;
+    max-width: 83.33333%;
+  }
+  .ikea-col-sm-11 {
+    -webkit-flex-basis: 91.66667%;
+        -ms-flex-preferred-size: 91.66667%;
+            flex-basis: 91.66667%;
+    max-width: 91.66667%;
+  }
+  .ikea-col-sm-12 {
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    max-width: 100%;
+  }
+  .ikea-offset-sm-1 {
+    margin-left: 8.33333%;
+  }
+  .ikea-offset-sm-1-both-sides {
+    margin-left: 8.33333%;
+    margin-right: 8.33333%;
+  }
+  .ikea-offset-sm-2 {
+    margin-left: 16.66667%;
+  }
+  .ikea-offset-sm-2-both-sides {
+    margin-left: 16.66667%;
+    margin-right: 16.66667%;
+  }
+  .ikea-offset-sm-3 {
+    margin-left: 25%;
+  }
+  .ikea-offset-sm-3-both-sides {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .ikea-offset-sm-4 {
+    margin-left: 33.33333%;
+  }
+  .ikea-offset-sm-4-both-sides {
+    margin-left: 33.33333%;
+    margin-right: 33.33333%;
+  }
+  .ikea-offset-sm-5 {
+    margin-left: 41.66667%;
+  }
+  .ikea-offset-sm-5-both-sides {
+    margin-left: 41.66667%;
+    margin-right: 41.66667%;
+  }
+  .ikea-offset-sm-6 {
+    margin-left: 50%;
+  }
+  .ikea-offset-sm-6-both-sides {
+    margin-left: 50%;
+    margin-right: 50%;
+  }
+  .ikea-offset-sm-7 {
+    margin-left: 58.33333%;
+  }
+  .ikea-offset-sm-7-both-sides {
+    margin-left: 58.33333%;
+    margin-right: 58.33333%;
+  }
+  .ikea-offset-sm-8 {
+    margin-left: 66.66667%;
+  }
+  .ikea-offset-sm-8-both-sides {
+    margin-left: 66.66667%;
+    margin-right: 66.66667%;
+  }
+  .ikea-offset-sm-9 {
+    margin-left: 75%;
+  }
+  .ikea-offset-sm-9-both-sides {
+    margin-left: 75%;
+    margin-right: 75%;
+  }
+  .ikea-offset-sm-10 {
+    margin-left: 83.33333%;
+  }
+  .ikea-offset-sm-10-both-sides {
+    margin-left: 83.33333%;
+    margin-right: 83.33333%;
+  }
+  .ikea-offset-sm-11 {
+    margin-left: 91.66667%;
+  }
+  .ikea-offset-sm-11-both-sides {
+    margin-left: 91.66667%;
+    margin-right: 91.66667%;
+  }
+  .ikea-offset-sm-12 {
+    margin-left: 100%;
+  }
+  .ikea-offset-sm-12-both-sides {
+    margin-left: 100%;
+    margin-right: 100%;
+  }
+  [dir='rtl'] .ikea-offset-sm-1 {
+    margin-right: 8.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-sm-2 {
+    margin-right: 16.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-sm-3 {
+    margin-right: 25%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-sm-4 {
+    margin-right: 33.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-sm-5 {
+    margin-right: 41.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-sm-6 {
+    margin-right: 50%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-sm-7 {
+    margin-right: 58.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-sm-8 {
+    margin-right: 66.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-sm-9 {
+    margin-right: 75%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-sm-10 {
+    margin-right: 83.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-sm-11 {
+    margin-right: 91.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-sm-12 {
+    margin-right: 100%;
+    margin-left: auto;
+  }
+  .ikea-col.ikea-paddingless-col,
+  [class*='ikea-col'].ikea-paddingless-col {
+    padding: 0;
+  }
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 36em) {
+  .ikea-row--md-start,
+  .ikea-sitecore-row--md-start > .component-content {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .ikea-row--md-end,
+  .ikea-sitecore-row--md-end > .component-content {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .ikea-row--md-center,
+  .ikea-sitecore-row--md-center > .component-content {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ikea-row--md-between,
+  .ikea-sitecore-row--md-between > .component-content {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .ikea-row--md-around,
+  .ikea-sitecore-row--md-around > .component-content {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+  }
+  .ikea-col-md-1 {
+    -webkit-flex-basis: 8.33333%;
+        -ms-flex-preferred-size: 8.33333%;
+            flex-basis: 8.33333%;
+    max-width: 8.33333%;
+  }
+  .ikea-col-md-2 {
+    -webkit-flex-basis: 16.66667%;
+        -ms-flex-preferred-size: 16.66667%;
+            flex-basis: 16.66667%;
+    max-width: 16.66667%;
+  }
+  .ikea-col-md-3 {
+    -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
+    max-width: 25%;
+  }
+  .ikea-col-md-4 {
+    -webkit-flex-basis: 33.33333%;
+        -ms-flex-preferred-size: 33.33333%;
+            flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+  .ikea-col-md-5 {
+    -webkit-flex-basis: 41.66667%;
+        -ms-flex-preferred-size: 41.66667%;
+            flex-basis: 41.66667%;
+    max-width: 41.66667%;
+  }
+  .ikea-col-md-6 {
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+    max-width: 50%;
+  }
+  .ikea-col-md-7 {
+    -webkit-flex-basis: 58.33333%;
+        -ms-flex-preferred-size: 58.33333%;
+            flex-basis: 58.33333%;
+    max-width: 58.33333%;
+  }
+  .ikea-col-md-8 {
+    -webkit-flex-basis: 66.66667%;
+        -ms-flex-preferred-size: 66.66667%;
+            flex-basis: 66.66667%;
+    max-width: 66.66667%;
+  }
+  .ikea-col-md-9 {
+    -webkit-flex-basis: 75%;
+        -ms-flex-preferred-size: 75%;
+            flex-basis: 75%;
+    max-width: 75%;
+  }
+  .ikea-col-md-10 {
+    -webkit-flex-basis: 83.33333%;
+        -ms-flex-preferred-size: 83.33333%;
+            flex-basis: 83.33333%;
+    max-width: 83.33333%;
+  }
+  .ikea-col-md-11 {
+    -webkit-flex-basis: 91.66667%;
+        -ms-flex-preferred-size: 91.66667%;
+            flex-basis: 91.66667%;
+    max-width: 91.66667%;
+  }
+  .ikea-col-md-12 {
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    max-width: 100%;
+  }
+  .ikea-offset-md-1 {
+    margin-left: 8.33333%;
+  }
+  .ikea-offset-md-1-both-sides {
+    margin-left: 8.33333%;
+    margin-right: 8.33333%;
+  }
+  .ikea-offset-md-2 {
+    margin-left: 16.66667%;
+  }
+  .ikea-offset-md-2-both-sides {
+    margin-left: 16.66667%;
+    margin-right: 16.66667%;
+  }
+  .ikea-offset-md-3 {
+    margin-left: 25%;
+  }
+  .ikea-offset-md-3-both-sides {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .ikea-offset-md-4 {
+    margin-left: 33.33333%;
+  }
+  .ikea-offset-md-4-both-sides {
+    margin-left: 33.33333%;
+    margin-right: 33.33333%;
+  }
+  .ikea-offset-md-5 {
+    margin-left: 41.66667%;
+  }
+  .ikea-offset-md-5-both-sides {
+    margin-left: 41.66667%;
+    margin-right: 41.66667%;
+  }
+  .ikea-offset-md-6 {
+    margin-left: 50%;
+  }
+  .ikea-offset-md-6-both-sides {
+    margin-left: 50%;
+    margin-right: 50%;
+  }
+  .ikea-offset-md-7 {
+    margin-left: 58.33333%;
+  }
+  .ikea-offset-md-7-both-sides {
+    margin-left: 58.33333%;
+    margin-right: 58.33333%;
+  }
+  .ikea-offset-md-8 {
+    margin-left: 66.66667%;
+  }
+  .ikea-offset-md-8-both-sides {
+    margin-left: 66.66667%;
+    margin-right: 66.66667%;
+  }
+  .ikea-offset-md-9 {
+    margin-left: 75%;
+  }
+  .ikea-offset-md-9-both-sides {
+    margin-left: 75%;
+    margin-right: 75%;
+  }
+  .ikea-offset-md-10 {
+    margin-left: 83.33333%;
+  }
+  .ikea-offset-md-10-both-sides {
+    margin-left: 83.33333%;
+    margin-right: 83.33333%;
+  }
+  .ikea-offset-md-11 {
+    margin-left: 91.66667%;
+  }
+  .ikea-offset-md-11-both-sides {
+    margin-left: 91.66667%;
+    margin-right: 91.66667%;
+  }
+  .ikea-offset-md-12 {
+    margin-left: 100%;
+  }
+  .ikea-offset-md-12-both-sides {
+    margin-left: 100%;
+    margin-right: 100%;
+  }
+  [dir='rtl'] .ikea-offset-md-1 {
+    margin-right: 8.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-md-2 {
+    margin-right: 16.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-md-3 {
+    margin-right: 25%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-md-4 {
+    margin-right: 33.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-md-5 {
+    margin-right: 41.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-md-6 {
+    margin-right: 50%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-md-7 {
+    margin-right: 58.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-md-8 {
+    margin-right: 66.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-md-9 {
+    margin-right: 75%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-md-10 {
+    margin-right: 83.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-md-11 {
+    margin-right: 91.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-md-12 {
+    margin-right: 100%;
+    margin-left: auto;
+  }
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 42.5em) {
+  .ikea-row--phablet-start,
+  .ikea-sitecore-row--phablet-start > .component-content {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .ikea-row--phablet-end,
+  .ikea-sitecore-row--phablet-end > .component-content {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .ikea-row--phablet-center,
+  .ikea-sitecore-row--phablet-center > .component-content {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ikea-row--phablet-between,
+  .ikea-sitecore-row--phablet-between > .component-content {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .ikea-row--phablet-around,
+  .ikea-sitecore-row--phablet-around > .component-content {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+  }
+  .hidden-phablet {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .ikea-sitecore-row > .component-content {
+    padding: 0 0.75rem;
+  }
+  .ikea-sitecore-row--nested {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+  .ikea-row {
+    padding: 0 0.75rem;
+  }
+  .ikea-row--nested {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+  .ikea-row--lg-start,
+  .ikea-sitecore-row--lg-start > .component-content {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .ikea-row--lg-end,
+  .ikea-sitecore-row--lg-end > .component-content {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .ikea-row--lg-center,
+  .ikea-sitecore-row--lg-center > .component-content {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ikea-row--lg-between,
+  .ikea-sitecore-row--lg-between > .component-content {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .ikea-row--lg-around,
+  .ikea-sitecore-row--lg-around > .component-content {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+  }
+  .ikea-col,
+  [class*='ikea-col-'] {
+    padding: 0 0.75rem;
+  }
+  .ikea-sitecore-row .ikea-col:not(.ikea-paddingless-col) .ikea-row,
+  .ikea-sitecore-row .ikea-col:not(.ikea-paddingless-col) .ikea-sitecore-row > .component-content,
+  .ikea-row .ikea-col:not(.ikea-paddingless-col) .ikea-row,
+  .ikea-row .ikea-col:not(.ikea-paddingless-col) .ikea-sitecore-row > .component-content,
+  [class*='ikea-col']:not(.ikea-paddingless-col) .ikea-row,
+  [class*='ikea-col']:not(.ikea-paddingless-col) .ikea-sitecore-row > .component-content {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+  .ikea-col-lg-1 {
+    -webkit-flex-basis: 8.33333%;
+        -ms-flex-preferred-size: 8.33333%;
+            flex-basis: 8.33333%;
+    max-width: 8.33333%;
+  }
+  .ikea-col-lg-2 {
+    -webkit-flex-basis: 16.66667%;
+        -ms-flex-preferred-size: 16.66667%;
+            flex-basis: 16.66667%;
+    max-width: 16.66667%;
+  }
+  .ikea-col-lg-3 {
+    -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
+    max-width: 25%;
+  }
+  .ikea-col-lg-4 {
+    -webkit-flex-basis: 33.33333%;
+        -ms-flex-preferred-size: 33.33333%;
+            flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+  .ikea-col-lg-5 {
+    -webkit-flex-basis: 41.66667%;
+        -ms-flex-preferred-size: 41.66667%;
+            flex-basis: 41.66667%;
+    max-width: 41.66667%;
+  }
+  .ikea-col-lg-6 {
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+    max-width: 50%;
+  }
+  .ikea-col-lg-7 {
+    -webkit-flex-basis: 58.33333%;
+        -ms-flex-preferred-size: 58.33333%;
+            flex-basis: 58.33333%;
+    max-width: 58.33333%;
+  }
+  .ikea-col-lg-8 {
+    -webkit-flex-basis: 66.66667%;
+        -ms-flex-preferred-size: 66.66667%;
+            flex-basis: 66.66667%;
+    max-width: 66.66667%;
+  }
+  .ikea-col-lg-9 {
+    -webkit-flex-basis: 75%;
+        -ms-flex-preferred-size: 75%;
+            flex-basis: 75%;
+    max-width: 75%;
+  }
+  .ikea-col-lg-10 {
+    -webkit-flex-basis: 83.33333%;
+        -ms-flex-preferred-size: 83.33333%;
+            flex-basis: 83.33333%;
+    max-width: 83.33333%;
+  }
+  .ikea-col-lg-11 {
+    -webkit-flex-basis: 91.66667%;
+        -ms-flex-preferred-size: 91.66667%;
+            flex-basis: 91.66667%;
+    max-width: 91.66667%;
+  }
+  .ikea-col-lg-12 {
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    max-width: 100%;
+  }
+  .ikea-offset-lg-1 {
+    margin-left: 8.33333%;
+  }
+  .ikea-offset-lg-1-both-sides {
+    margin-left: 8.33333%;
+    margin-right: 8.33333%;
+  }
+  .ikea-offset-lg-2 {
+    margin-left: 16.66667%;
+  }
+  .ikea-offset-lg-2-both-sides {
+    margin-left: 16.66667%;
+    margin-right: 16.66667%;
+  }
+  .ikea-offset-lg-3 {
+    margin-left: 25%;
+  }
+  .ikea-offset-lg-3-both-sides {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .ikea-offset-lg-4 {
+    margin-left: 33.33333%;
+  }
+  .ikea-offset-lg-4-both-sides {
+    margin-left: 33.33333%;
+    margin-right: 33.33333%;
+  }
+  .ikea-offset-lg-5 {
+    margin-left: 41.66667%;
+  }
+  .ikea-offset-lg-5-both-sides {
+    margin-left: 41.66667%;
+    margin-right: 41.66667%;
+  }
+  .ikea-offset-lg-6 {
+    margin-left: 50%;
+  }
+  .ikea-offset-lg-6-both-sides {
+    margin-left: 50%;
+    margin-right: 50%;
+  }
+  .ikea-offset-lg-7 {
+    margin-left: 58.33333%;
+  }
+  .ikea-offset-lg-7-both-sides {
+    margin-left: 58.33333%;
+    margin-right: 58.33333%;
+  }
+  .ikea-offset-lg-8 {
+    margin-left: 66.66667%;
+  }
+  .ikea-offset-lg-8-both-sides {
+    margin-left: 66.66667%;
+    margin-right: 66.66667%;
+  }
+  .ikea-offset-lg-9 {
+    margin-left: 75%;
+  }
+  .ikea-offset-lg-9-both-sides {
+    margin-left: 75%;
+    margin-right: 75%;
+  }
+  .ikea-offset-lg-10 {
+    margin-left: 83.33333%;
+  }
+  .ikea-offset-lg-10-both-sides {
+    margin-left: 83.33333%;
+    margin-right: 83.33333%;
+  }
+  .ikea-offset-lg-11 {
+    margin-left: 91.66667%;
+  }
+  .ikea-offset-lg-11-both-sides {
+    margin-left: 91.66667%;
+    margin-right: 91.66667%;
+  }
+  .ikea-offset-lg-12 {
+    margin-left: 100%;
+  }
+  .ikea-offset-lg-12-both-sides {
+    margin-left: 100%;
+    margin-right: 100%;
+  }
+  .ikea-break {
+    padding: 0 0.75rem;
+  }
+  [dir='rtl'] .ikea-offset-lg-1 {
+    margin-right: 8.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-lg-2 {
+    margin-right: 16.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-lg-3 {
+    margin-right: 25%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-lg-4 {
+    margin-right: 33.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-lg-5 {
+    margin-right: 41.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-lg-6 {
+    margin-right: 50%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-lg-7 {
+    margin-right: 58.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-lg-8 {
+    margin-right: 66.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-lg-9 {
+    margin-right: 75%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-lg-10 {
+    margin-right: 83.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-lg-11 {
+    margin-right: 91.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-lg-12 {
+    margin-right: 100%;
+    margin-left: auto;
+  }
+  .ikea-col.ikea-paddingless-col,
+  [class*='ikea-col'].ikea-paddingless-col {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 62em) {
+  .ikea-row--xl-start,
+  .ikea-sitecore-row--xl-start > .component-content {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .ikea-row--xl-end,
+  .ikea-sitecore-row--xl-end > .component-content {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .ikea-row--xl-center,
+  .ikea-sitecore-row--xl-center > .component-content {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ikea-row--xl-between,
+  .ikea-sitecore-row--xl-between > .component-content {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .ikea-row--xl-around,
+  .ikea-sitecore-row--xl-around > .component-content {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+  }
+  .ikea-offset-xl-1 {
+    margin-left: 8.33333%;
+  }
+  .ikea-offset-xl-1-both-sides {
+    margin-left: 8.33333%;
+    margin-right: 8.33333%;
+  }
+  .ikea-offset-xl-2 {
+    margin-left: 16.66667%;
+  }
+  .ikea-offset-xl-2-both-sides {
+    margin-left: 16.66667%;
+    margin-right: 16.66667%;
+  }
+  .ikea-offset-xl-3 {
+    margin-left: 25%;
+  }
+  .ikea-offset-xl-3-both-sides {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .ikea-offset-xl-4 {
+    margin-left: 33.33333%;
+  }
+  .ikea-offset-xl-4-both-sides {
+    margin-left: 33.33333%;
+    margin-right: 33.33333%;
+  }
+  .ikea-offset-xl-5 {
+    margin-left: 41.66667%;
+  }
+  .ikea-offset-xl-5-both-sides {
+    margin-left: 41.66667%;
+    margin-right: 41.66667%;
+  }
+  .ikea-offset-xl-6 {
+    margin-left: 50%;
+  }
+  .ikea-offset-xl-6-both-sides {
+    margin-left: 50%;
+    margin-right: 50%;
+  }
+  .ikea-offset-xl-7 {
+    margin-left: 58.33333%;
+  }
+  .ikea-offset-xl-7-both-sides {
+    margin-left: 58.33333%;
+    margin-right: 58.33333%;
+  }
+  .ikea-offset-xl-8 {
+    margin-left: 66.66667%;
+  }
+  .ikea-offset-xl-8-both-sides {
+    margin-left: 66.66667%;
+    margin-right: 66.66667%;
+  }
+  .ikea-offset-xl-9 {
+    margin-left: 75%;
+  }
+  .ikea-offset-xl-9-both-sides {
+    margin-left: 75%;
+    margin-right: 75%;
+  }
+  .ikea-offset-xl-10 {
+    margin-left: 83.33333%;
+  }
+  .ikea-offset-xl-10-both-sides {
+    margin-left: 83.33333%;
+    margin-right: 83.33333%;
+  }
+  .ikea-offset-xl-11 {
+    margin-left: 91.66667%;
+  }
+  .ikea-offset-xl-11-both-sides {
+    margin-left: 91.66667%;
+    margin-right: 91.66667%;
+  }
+  .ikea-offset-xl-12 {
+    margin-left: 100%;
+  }
+  .ikea-offset-xl-12-both-sides {
+    margin-left: 100%;
+    margin-right: 100%;
+  }
+  .ikea-col-xl-1 {
+    -webkit-flex-basis: 8.33333%;
+        -ms-flex-preferred-size: 8.33333%;
+            flex-basis: 8.33333%;
+    max-width: 8.33333%;
+  }
+  .ikea-col-xl-2 {
+    -webkit-flex-basis: 16.66667%;
+        -ms-flex-preferred-size: 16.66667%;
+            flex-basis: 16.66667%;
+    max-width: 16.66667%;
+  }
+  .ikea-col-xl-3 {
+    -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
+    max-width: 25%;
+  }
+  .ikea-col-xl-4 {
+    -webkit-flex-basis: 33.33333%;
+        -ms-flex-preferred-size: 33.33333%;
+            flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+  .ikea-col-xl-5 {
+    -webkit-flex-basis: 41.66667%;
+        -ms-flex-preferred-size: 41.66667%;
+            flex-basis: 41.66667%;
+    max-width: 41.66667%;
+  }
+  .ikea-col-xl-6 {
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+    max-width: 50%;
+  }
+  .ikea-col-xl-7 {
+    -webkit-flex-basis: 58.33333%;
+        -ms-flex-preferred-size: 58.33333%;
+            flex-basis: 58.33333%;
+    max-width: 58.33333%;
+  }
+  .ikea-col-xl-8 {
+    -webkit-flex-basis: 66.66667%;
+        -ms-flex-preferred-size: 66.66667%;
+            flex-basis: 66.66667%;
+    max-width: 66.66667%;
+  }
+  .ikea-col-xl-9 {
+    -webkit-flex-basis: 75%;
+        -ms-flex-preferred-size: 75%;
+            flex-basis: 75%;
+    max-width: 75%;
+  }
+  .ikea-col-xl-10 {
+    -webkit-flex-basis: 83.33333%;
+        -ms-flex-preferred-size: 83.33333%;
+            flex-basis: 83.33333%;
+    max-width: 83.33333%;
+  }
+  .ikea-col-xl-11 {
+    -webkit-flex-basis: 91.66667%;
+        -ms-flex-preferred-size: 91.66667%;
+            flex-basis: 91.66667%;
+    max-width: 91.66667%;
+  }
+  .ikea-col-xl-12 {
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    max-width: 100%;
+  }
+  [dir='rtl'] .ikea-offset-xl-1 {
+    margin-right: 8.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xl-2 {
+    margin-right: 16.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xl-3 {
+    margin-right: 25%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xl-4 {
+    margin-right: 33.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xl-5 {
+    margin-right: 41.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xl-6 {
+    margin-right: 50%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xl-7 {
+    margin-right: 58.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xl-8 {
+    margin-right: 66.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xl-9 {
+    margin-right: 75%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xl-10 {
+    margin-right: 83.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xl-11 {
+    margin-right: 91.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xl-12 {
+    margin-right: 100%;
+    margin-left: auto;
+  }
+  .hidden-xl {
+    display: none !important;
+  }
+  .page-wrapper > main,
+  #wrapper > main {
+    min-height: 4.5625rem;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .ikea-sitecore-row > .component-content {
+    padding: 0 1rem;
+  }
+  .ikea-sitecore-row--nested {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  .ikea-row {
+    padding: 0 1rem;
+  }
+  .ikea-row--nested {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  .ikea-row--xxl-start,
+  .ikea-sitecore-row--xxl-start > .component-content {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .ikea-row--xxl-end,
+  .ikea-sitecore-row--xxl-end > .component-content {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .ikea-row--xxl-center,
+  .ikea-sitecore-row--xxl-center > .component-content {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ikea-row--xxl-between,
+  .ikea-sitecore-row--xxl-between > .component-content {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .ikea-row--xxl-around,
+  .ikea-sitecore-row--xxl-around > .component-content {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+  }
+  .ikea-col,
+  [class*='ikea-col-'] {
+    padding: 0 1rem;
+  }
+  .ikea-sitecore-row .ikea-col:not(.ikea-paddingless-col) .ikea-row,
+  .ikea-sitecore-row .ikea-col:not(.ikea-paddingless-col) .ikea-sitecore-row > .component-content,
+  .ikea-row .ikea-col:not(.ikea-paddingless-col) .ikea-row,
+  .ikea-row .ikea-col:not(.ikea-paddingless-col) .ikea-sitecore-row > .component-content,
+  [class*='ikea-col']:not(.ikea-paddingless-col) .ikea-row,
+  [class*='ikea-col']:not(.ikea-paddingless-col) .ikea-sitecore-row > .component-content {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  .ikea-col-xxl-1 {
+    -webkit-flex-basis: 8.33333%;
+        -ms-flex-preferred-size: 8.33333%;
+            flex-basis: 8.33333%;
+    max-width: 8.33333%;
+  }
+  .ikea-col-xxl-2 {
+    -webkit-flex-basis: 16.66667%;
+        -ms-flex-preferred-size: 16.66667%;
+            flex-basis: 16.66667%;
+    max-width: 16.66667%;
+  }
+  .ikea-col-xxl-3 {
+    -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
+    max-width: 25%;
+  }
+  .ikea-col-xxl-4 {
+    -webkit-flex-basis: 33.33333%;
+        -ms-flex-preferred-size: 33.33333%;
+            flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+  .ikea-col-xxl-5 {
+    -webkit-flex-basis: 41.66667%;
+        -ms-flex-preferred-size: 41.66667%;
+            flex-basis: 41.66667%;
+    max-width: 41.66667%;
+  }
+  .ikea-col-xxl-6 {
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+    max-width: 50%;
+  }
+  .ikea-col-xxl-7 {
+    -webkit-flex-basis: 58.33333%;
+        -ms-flex-preferred-size: 58.33333%;
+            flex-basis: 58.33333%;
+    max-width: 58.33333%;
+  }
+  .ikea-col-xxl-8 {
+    -webkit-flex-basis: 66.66667%;
+        -ms-flex-preferred-size: 66.66667%;
+            flex-basis: 66.66667%;
+    max-width: 66.66667%;
+  }
+  .ikea-col-xxl-9 {
+    -webkit-flex-basis: 75%;
+        -ms-flex-preferred-size: 75%;
+            flex-basis: 75%;
+    max-width: 75%;
+  }
+  .ikea-col-xxl-10 {
+    -webkit-flex-basis: 83.33333%;
+        -ms-flex-preferred-size: 83.33333%;
+            flex-basis: 83.33333%;
+    max-width: 83.33333%;
+  }
+  .ikea-col-xxl-11 {
+    -webkit-flex-basis: 91.66667%;
+        -ms-flex-preferred-size: 91.66667%;
+            flex-basis: 91.66667%;
+    max-width: 91.66667%;
+  }
+  .ikea-col-xxl-12 {
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    max-width: 100%;
+  }
+  .ikea-offset-xxl-1 {
+    margin-left: 8.33333%;
+  }
+  .ikea-offset-xxl-1-both-sides {
+    margin-left: 8.33333%;
+    margin-right: 8.33333%;
+  }
+  .ikea-offset-xxl-2 {
+    margin-left: 16.66667%;
+  }
+  .ikea-offset-xxl-2-both-sides {
+    margin-left: 16.66667%;
+    margin-right: 16.66667%;
+  }
+  .ikea-offset-xxl-3 {
+    margin-left: 25%;
+  }
+  .ikea-offset-xxl-3-both-sides {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .ikea-offset-xxl-4 {
+    margin-left: 33.33333%;
+  }
+  .ikea-offset-xxl-4-both-sides {
+    margin-left: 33.33333%;
+    margin-right: 33.33333%;
+  }
+  .ikea-offset-xxl-5 {
+    margin-left: 41.66667%;
+  }
+  .ikea-offset-xxl-5-both-sides {
+    margin-left: 41.66667%;
+    margin-right: 41.66667%;
+  }
+  .ikea-offset-xxl-6 {
+    margin-left: 50%;
+  }
+  .ikea-offset-xxl-6-both-sides {
+    margin-left: 50%;
+    margin-right: 50%;
+  }
+  .ikea-offset-xxl-7 {
+    margin-left: 58.33333%;
+  }
+  .ikea-offset-xxl-7-both-sides {
+    margin-left: 58.33333%;
+    margin-right: 58.33333%;
+  }
+  .ikea-offset-xxl-8 {
+    margin-left: 66.66667%;
+  }
+  .ikea-offset-xxl-8-both-sides {
+    margin-left: 66.66667%;
+    margin-right: 66.66667%;
+  }
+  .ikea-offset-xxl-9 {
+    margin-left: 75%;
+  }
+  .ikea-offset-xxl-9-both-sides {
+    margin-left: 75%;
+    margin-right: 75%;
+  }
+  .ikea-offset-xxl-10 {
+    margin-left: 83.33333%;
+  }
+  .ikea-offset-xxl-10-both-sides {
+    margin-left: 83.33333%;
+    margin-right: 83.33333%;
+  }
+  .ikea-offset-xxl-11 {
+    margin-left: 91.66667%;
+  }
+  .ikea-offset-xxl-11-both-sides {
+    margin-left: 91.66667%;
+    margin-right: 91.66667%;
+  }
+  .ikea-offset-xxl-12 {
+    margin-left: 100%;
+  }
+  .ikea-offset-xxl-12-both-sides {
+    margin-left: 100%;
+    margin-right: 100%;
+  }
+  [dir='rtl'] .ikea-offset-xxl-1 {
+    margin-right: 8.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxl-2 {
+    margin-right: 16.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxl-3 {
+    margin-right: 25%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxl-4 {
+    margin-right: 33.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxl-5 {
+    margin-right: 41.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxl-6 {
+    margin-right: 50%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxl-7 {
+    margin-right: 58.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxl-8 {
+    margin-right: 66.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxl-9 {
+    margin-right: 75%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxl-10 {
+    margin-right: 83.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxl-11 {
+    margin-right: 91.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxl-12 {
+    margin-right: 100%;
+    margin-left: auto;
+  }
+  .ikea-col.ikea-paddingless-col,
+  [class*='ikea-col'].ikea-paddingless-col {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  .hidden-xxl {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 118.75em) {
+  .ikea-row--xxxl-start,
+  .ikea-sitecore-row--xxxl-start > .component-content {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .ikea-row--xxxl-end,
+  .ikea-sitecore-row--xxxl-end > .component-content {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .ikea-row--xxxl-center,
+  .ikea-sitecore-row--xxxl-center > .component-content {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ikea-row--xxxl-between,
+  .ikea-sitecore-row--xxxl-between > .component-content {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .ikea-row--xxxl-around,
+  .ikea-sitecore-row--xxxl-around > .component-content {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+  }
+  .ikea-col-xxxl-1 {
+    -webkit-flex-basis: 8.33333%;
+        -ms-flex-preferred-size: 8.33333%;
+            flex-basis: 8.33333%;
+    max-width: 8.33333%;
+  }
+  .ikea-offset-xxxl-1-both-sides {
+    margin-left: 8.33333%;
+    margin-right: 8.33333%;
+  }
+  .ikea-col-xxxl-2 {
+    -webkit-flex-basis: 16.66667%;
+        -ms-flex-preferred-size: 16.66667%;
+            flex-basis: 16.66667%;
+    max-width: 16.66667%;
+  }
+  .ikea-offset-xxxl-2-both-sides {
+    margin-left: 16.66667%;
+    margin-right: 16.66667%;
+  }
+  .ikea-col-xxxl-3 {
+    -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
+    max-width: 25%;
+  }
+  .ikea-offset-xxxl-3-both-sides {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .ikea-col-xxxl-4 {
+    -webkit-flex-basis: 33.33333%;
+        -ms-flex-preferred-size: 33.33333%;
+            flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+  .ikea-offset-xxxl-4-both-sides {
+    margin-left: 33.33333%;
+    margin-right: 33.33333%;
+  }
+  .ikea-col-xxxl-5 {
+    -webkit-flex-basis: 41.66667%;
+        -ms-flex-preferred-size: 41.66667%;
+            flex-basis: 41.66667%;
+    max-width: 41.66667%;
+  }
+  .ikea-offset-xxxl-5-both-sides {
+    margin-left: 41.66667%;
+    margin-right: 41.66667%;
+  }
+  .ikea-col-xxxl-6 {
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+    max-width: 50%;
+  }
+  .ikea-offset-xxxl-6-both-sides {
+    margin-left: 50%;
+    margin-right: 50%;
+  }
+  .ikea-col-xxxl-7 {
+    -webkit-flex-basis: 58.33333%;
+        -ms-flex-preferred-size: 58.33333%;
+            flex-basis: 58.33333%;
+    max-width: 58.33333%;
+  }
+  .ikea-offset-xxxl-7-both-sides {
+    margin-left: 58.33333%;
+    margin-right: 58.33333%;
+  }
+  .ikea-col-xxxl-8 {
+    -webkit-flex-basis: 66.66667%;
+        -ms-flex-preferred-size: 66.66667%;
+            flex-basis: 66.66667%;
+    max-width: 66.66667%;
+  }
+  .ikea-offset-xxxl-8-both-sides {
+    margin-left: 66.66667%;
+    margin-right: 66.66667%;
+  }
+  .ikea-col-xxxl-9 {
+    -webkit-flex-basis: 75%;
+        -ms-flex-preferred-size: 75%;
+            flex-basis: 75%;
+    max-width: 75%;
+  }
+  .ikea-offset-xxxl-9-both-sides {
+    margin-left: 75%;
+    margin-right: 75%;
+  }
+  .ikea-col-xxxl-10 {
+    -webkit-flex-basis: 83.33333%;
+        -ms-flex-preferred-size: 83.33333%;
+            flex-basis: 83.33333%;
+    max-width: 83.33333%;
+  }
+  .ikea-offset-xxxl-10-both-sides {
+    margin-left: 83.33333%;
+    margin-right: 83.33333%;
+  }
+  .ikea-col-xxxl-11 {
+    -webkit-flex-basis: 91.66667%;
+        -ms-flex-preferred-size: 91.66667%;
+            flex-basis: 91.66667%;
+    max-width: 91.66667%;
+  }
+  .ikea-offset-xxxl-11-both-sides {
+    margin-left: 91.66667%;
+    margin-right: 91.66667%;
+  }
+  .ikea-col-xxxl-12 {
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    max-width: 100%;
+  }
+  .ikea-offset-xxxl-12-both-sides {
+    margin-left: 100%;
+    margin-right: 100%;
+  }
+  .ikea-offset-xxxl-1 {
+    margin-left: 8.33333%;
+  }
+  .ikea-offset-xxxl-2 {
+    margin-left: 16.66667%;
+  }
+  .ikea-offset-xxxl-3 {
+    margin-left: 25%;
+  }
+  .ikea-offset-xxxl-4 {
+    margin-left: 33.33333%;
+  }
+  .ikea-offset-xxxl-5 {
+    margin-left: 41.66667%;
+  }
+  .ikea-offset-xxxl-6 {
+    margin-left: 50%;
+  }
+  .ikea-offset-xxxl-7 {
+    margin-left: 58.33333%;
+  }
+  .ikea-offset-xxxl-8 {
+    margin-left: 66.66667%;
+  }
+  .ikea-offset-xxxl-9 {
+    margin-left: 75%;
+  }
+  .ikea-offset-xxxl-10 {
+    margin-left: 83.33333%;
+  }
+  .ikea-offset-xxxl-11 {
+    margin-left: 91.66667%;
+  }
+  .ikea-offset-xxxl-12 {
+    margin-left: 100%;
+  }
+  [dir='rtl'] .ikea-offset-xxxl-1 {
+    margin-right: 8.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxxl-2 {
+    margin-right: 16.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxxl-3 {
+    margin-right: 25%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxxl-4 {
+    margin-right: 33.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxxl-5 {
+    margin-right: 41.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxxl-6 {
+    margin-right: 50%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxxl-7 {
+    margin-right: 58.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxxl-8 {
+    margin-right: 66.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxxl-9 {
+    margin-right: 75%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxxl-10 {
+    margin-right: 83.33333%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxxl-11 {
+    margin-right: 91.66667%;
+    margin-left: auto;
+  }
+  [dir='rtl'] .ikea-offset-xxxl-12 {
+    margin-right: 100%;
+    margin-left: auto;
+  }
+  .hidden-xxxl {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 118.74em) {
+  .hidden-until-xxxl {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 19.99em) {
+  .hidden-until-sm {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 35.99em) {
+  .hidden-until-md {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 42.49em) {
+  .hidden-until-phablet {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 47.99em) {
+  .hidden-until-lg {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 61.99em) {
+  .hidden-until-xl {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 74.99em) {
+  .hidden-until-xxl {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: -0.01em) {
+  .hidden-until-xs {
+    display: none !important;
+  }
+}
+
+/*# sourceMappingURL=aboutikea-grid.css.map */
